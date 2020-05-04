@@ -78,7 +78,7 @@ function getRandomVar(){
 }
 
 /* Layer 3 */
-
+var passwordstore;
 function getpassword(password_length){
     let passwordarray = Array(password_length).fill(1);
     for (let index = 0; index < password_length; index++) {
@@ -86,6 +86,10 @@ function getpassword(password_length){
     }
     let password = passwordarray.join("");
     console.log("your password is: "+password);
+    //copy to clipboard
+    var dummyContent = password;
+    var dummy = $('<input>').val(dummyContent).appendTo('body').select()
+    document.execCommand('copy')
     return password;
 }
 
