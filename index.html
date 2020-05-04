@@ -22,7 +22,9 @@
     <script>
       $(document).ready(function(){
         $("button").click(function(){
-          $("p").html(getpassword(password_length));
+          $("p").empty();
+          $("p").text(getpassword(password_length));
+
         });
       });
       </script>
@@ -72,7 +74,7 @@
           <mark>Click the button to get your first password!</mark>
         </p>
         <br>
-        <button onclick="getpassword(password_length)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="border-radius:13px;background-color: blue">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="border-radius:13px;background-color: blue">
           Generate Password
         </button>
         <br>
