@@ -1,103 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Moskotcho Password Generator</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Moskotcho Password Generator is open source Password generator service to generate random & secure passwords">
-    <meta name="author" content="WalidAmriou">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style_buttons.css">
-    <link rel="icon" href="img/icon.svg" type="image/png" sizes="16x16"> 
-    <link rel="stylesheet" href="material_design/material.min.css">
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+<head>
+  <title>Moskotcho Password Generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Moskotcho Password Generator is open source Password generator service to generate random & secure passwords">
+  <meta name="author" content="WalidAmriou">
 
-    <script src="material_design/material.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_buttons.css">
+  <link rel="icon" href="img/icon.svg" type="image/png" sizes="16x16">
+  <link rel="stylesheet" href="material_design/material.min.css">
+  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43599500-3"></script>
-    <script>
+  <script src="material_design/material.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/jquery.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43599500-3"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
     gtag('config', 'UA-43599500-3');
-    </script>
+  </script>
 
 
-    <script>
-      $(document).ready(function(){
-        $("#password_generate_button").click(function(){
-          $("p").empty();
-          $("p").text(getpassword());
-          console.log(password_display_flag);
+  <script>
+    $(document).ready(function () {
+      $("#password_generate_button").click(function () {
+        $("p").empty();
+        $("p").text(getpassword());
+        console.log(password_display_flag);
 
-          if(password_display_flag==1){
+        if (password_display_flag == 1) {
           copyToClipboard('#password_display');
-          }
-          password_display_flag=0;
+        }
+        password_display_flag = 0;
 
-        });
       });
-      </script>
+    });
+  </script>
 
-<style>  
-  body,
-  h1,h2,h3,h4,h5,h6,p,a{
-    font-family: monospace, sans-serif
-  }
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
+      font-family: monospace, sans-serif
+    }
 
-  body,
-  html {
-    color:#212121;
-    background-color: #FAFAFA
-  }
+    body,
+    html {
+      color: #212121;
+      background-color: #FAFAFA
+    }
 
-  .bgimg {
-    background-image: url('img/matrix.svg');
-    min-height: 100%;
-    background-repeat: repeat;
-    background-position: center;
-    background-size: cover;
-  }
-</style>
+    .bgimg {
+      background-image: url('img/matrix.svg');
+      min-height: 100%;
+      background-repeat: repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
 </head>
+
 <body style="color: #212121;">
-  
+
   <div class="devfast-display-container devfast-animate-opacity devfast-text-white">
-      <div class="devfast-display-topleft devfast-padding-large devfast-xlarge" style="margin: 10px">
-      </div>
-      
-      <div class="devfast-display-topright devfast-padding-large devfast-xlarge" style="margin: 10px">
-      </div>
+    <div class="devfast-display-topleft devfast-padding-large devfast-xlarge" style="margin: 10px">
+    </div>
+
+    <div class="devfast-display-topright devfast-padding-large devfast-xlarge" style="margin: 10px">
+    </div>
 
     <br>
     <center>
       <div class="devfast-display-middle">
-          <h5 class="devfast-jumbo devfast-animate-top"></h5>
-          <h4 stylecolor="#212121">
-            <img src="img/icon.svg" width="50px" height="50px">
+        <h5 class="devfast-jumbo devfast-animate-top"></h5>
+        <h4 stylecolor="#212121">
+          <img src="img/icon.svg" width="50px" height="50px">
 
-            <b>Moskotcho Password Generator</b></h4>
+          <b>Moskotcho Password Generator</b></h4>
 
         <h5>Your new password</h5>
-      </b>
+        </b>
         <p class="devfast-large devfast-center" style="color: #B71C1C;" id="password_display">
           <mark>Put the length and click the blue button to get your first password!</mark>
         </p>
-      
-        <!--Numeric Textfield with Floating Label-->  
+
+        <!--Numeric Textfield with Floating Label-->
         <form action="#">
-         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-           <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="passl" autocomplete="off">
-           <label class="mdl-textfield__label" for="sample4">Password length ...</label>
-           <span class="mdl-textfield__error">Input is not a number!</span>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="passl"
+              autocomplete="off">
+            <label class="mdl-textfield__label" for="sample4">Password length ...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
         </form>
-      
-        <button id="password_generate_button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="border-radius:13px;background-color: blue">
+
+        <button id="password_generate_button"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          style="border-radius:13px;background-color: blue">
           Generate Password
         </button>
         <h6>Your password auto copy to clipboard after generated</h6>
@@ -115,17 +131,19 @@
 
   <footer class="mdl-mega-footer">
     <div class="mdl-mega-footer__middle-section">
-  
+
       <div class="mdl-mega-footer__drop-down-section">
         <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
         <h1 class="mdl-mega-footer__heading">About Project</h1>
         <ul class="mdl-mega-footer__link-list">
           <li><a href="#">About</a></li>
-          <li><a href="https://github.com/walidamriou/Moskotcho_Password_Generator/" target="_blank">Source code</a></li>
-          <li><a href="https://github.com/walidamriou/Moskotcho_Password_Generator/blob/master/LICENSE" target="_blank">License</a></li>
+          <li><a href="https://github.com/walidamriou/Moskotcho_Password_Generator/" target="_blank">Source code</a>
+          </li>
+          <li><a href="https://github.com/walidamriou/Moskotcho_Password_Generator/blob/master/LICENSE"
+              target="_blank">License</a></li>
         </ul>
       </div>
-  
+
       <div class="mdl-mega-footer__drop-down-section">
         <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
         <h1 class="mdl-mega-footer__heading">About developer</h1>
@@ -135,20 +153,20 @@
           <li><a href="https://twitter.com/walidamriou" target="_blank">Twitter @walidamriou</a></li>
         </ul>
       </div>
-  
-  
+
+
       <div class="mdl-mega-footer__drop-down-section">
         <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
         <h1 class="mdl-mega-footer__heading">Moskotcho Password Generator</h1>
         open source Password generator service to generate random & secure passwords
       </div>
-  
     </div>
-  
+
+
     <div class="mdl-mega-footer__bottom-section">
       <div class="mdl-logo">Moskotcho Password Generator</div>
       Walid Amriou 2020
     </div>
-  
+
   </footer>
 </body>
