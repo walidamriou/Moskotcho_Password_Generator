@@ -22,6 +22,13 @@
         $("#password_generate_button").click(function(){
           $("p").empty();
           $("p").text(getpassword());
+          console.log(password_display_flag);
+
+          if(password_display_flag==1){
+          copyToClipboard('#password_display');
+          }
+          password_display_flag=0;
+
         });
       });
       </script>
@@ -66,7 +73,7 @@
 
         <h5>Your new password</h5>
       </b>
-        <p class="devfast-large devfast-center" style="color: #B71C1C;">
+        <p class="devfast-large devfast-center" style="color: #B71C1C;" id="password_display">
           <mark>Put the length and click the blue button to get your first password!</mark>
         </p>
       
@@ -92,7 +99,6 @@
       </div>
     </center>
     <div class="devfast-display-bottomleft devfast-padding-large">
-      <!-- Source code <a href="https://github.com/walidamriou/GDG-DevFest-Msila-2019-Website" target="_blank">GitHub</a> -->
     </div>
   </div>
 

@@ -42,6 +42,16 @@ function RandomVar_core(min, max) {
     }
 }
 
+/* copyToClipboard function*/
+var password_display_flag=0;
+function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+
 /* Layer 1 */
 function getRandomType(){
     return (Math.floor(Math.random()*4));
@@ -92,11 +102,9 @@ function getpassword(){
         //print password in the console for test
         console.log("your password is: "+password);
         
-        //copy to clipboard
-        var dummyContent = password;
-        var dummy = $('<input>').val(dummyContent).appendTo('body').select();
-        document.execCommand('copy');
+        password_display_flag=1;
         return password; 
+
     }
     else if(password_length==""){
         $("p").empty();
