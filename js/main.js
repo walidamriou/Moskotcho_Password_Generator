@@ -79,17 +79,36 @@ function getRandomVar(){
 var passwordstore;
 function getpassword(){
     password_length = document.getElementById("passl").value;
-    let passwordarray = Array(password_length).fill(1);
-    for (let index = 0; index < password_length; index++) {
-        passwordarray[index] = getRandomVar();
+
+    if(password_length>=8){    
+        //Create passwordarray[password_length] with all element is =1
+        let passwordarray = Array(password_length).fill(1);
+        //charge the passwordarray[password_length] by RandomVar
+        for (let index = 0; index < password_length; index++) {
+            passwordarray[index] = getRandomVar();
+        }
+        //make passwordarray one element call password
+        let password = passwordarray.join("");
+        //print password in the console for test
+        console.log("your password is: "+password);
+        
+        //copy to clipboard
+        var dummyContent = password;
+        var dummy = $('<input>').val(dummyContent).appendTo('body').select();
+        document.execCommand('copy');
+        return password; 
     }
-    let password = passwordarray.join("");
-    console.log("your password is: "+password);
-    //copy to clipboard
-    var dummyContent = password;
-    var dummy = $('<input>').val(dummyContent).appendTo('body').select();
-    document.execCommand('copy');
-    return password;
+    else if(password_length==""){
+        $("p").empty();
+        $("p").text("You should put a length!");
+        }
+    else{
+        $("p").empty();
+        $("p").text("The length of the password should greater or equal 8");
+        //alert("The length of a password should greater or equal 8");
+        console.log("The length of a password should greater or equal 8"); 
+    }  
+
 }
 
 
