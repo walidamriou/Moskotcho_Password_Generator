@@ -15,8 +15,6 @@ Last update: May 2020
 
 */
 
-let password_length = 20;
-
 // Generate a random integer n with equal chance in  min <= n < max.
 function RandomVar_core(min, max) {
     let range = max - min;
@@ -79,7 +77,8 @@ function getRandomVar(){
 
 /* Layer 3 */
 var passwordstore;
-function getpassword(password_length){
+function getpassword(){
+    password_length = document.getElementById("passl").value;
     let passwordarray = Array(password_length).fill(1);
     for (let index = 0; index < password_length; index++) {
         passwordarray[index] = getRandomVar();
@@ -88,8 +87,8 @@ function getpassword(password_length){
     console.log("your password is: "+password);
     //copy to clipboard
     var dummyContent = password;
-    var dummy = $('<input>').val(dummyContent).appendTo('body').select()
-    document.execCommand('copy')
+    var dummy = $('<input>').val(dummyContent).appendTo('body').select();
+    document.execCommand('copy');
     return password;
 }
 
