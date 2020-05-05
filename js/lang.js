@@ -11,7 +11,7 @@ function readJsonFile(file, callback) {
     rawFile.send(null);
 }
 
-readJsonFile("/language/test.json", function(text){
+readJsonFile("https://walidamriou.github.io/data.json", function(text){
     var data = JSON.parse(text);
     console.log(data);
     //alert(data[0].data);
