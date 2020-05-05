@@ -32,7 +32,7 @@ function RandomVar_core(min, max) {
         window.crypto.getRandomValues(ar);
 
         let val = 0;
-        for (let i = 0;i < requestBytes;i++) {
+        for (let i = 0; i < requestBytes; i++) {
             val = (val << 8) + ar[i];
         }
 
@@ -43,42 +43,43 @@ function RandomVar_core(min, max) {
 }
 
 /* copyToClipboard function*/
-var password_display_flag=0;
+var password_display_flag = 0;
+
 function copyToClipboard(element) {
     var $temp = $("<input>");
     $("body").append($temp);
     $temp.val($(element).text()).select();
     document.execCommand("copy");
     $temp.remove();
-  }
+}
 
 /* Layer 1 */
-function getRandomType(){
-    return (Math.floor(Math.random()*4));
+function getRandomType() {
+    return (Math.floor(Math.random() * 4));
 }
 
 /* Layer 2*/
 
-function getRandomVar(){
+function getRandomVar() {
     let RandomVar;
     switch (getRandomType()) {
         //Lower
         case 0:
-            RandomVar = String.fromCharCode(RandomVar_core(97,122));
+            RandomVar = String.fromCharCode(RandomVar_core(97, 122));
             break;
-        //Upper
+            //Upper
         case 1:
-            RandomVar = String.fromCharCode(RandomVar_core(65,90));
+            RandomVar = String.fromCharCode(RandomVar_core(65, 90));
             break;
-        //Number
+            //Number
         case 2:
-            RandomVar = String.fromCharCode(RandomVar_core(48,57));
+            RandomVar = String.fromCharCode(RandomVar_core(48, 57));
             break;
-        //symbols
+            //symbols
         case 3:
             let symbols = '!@#$%^&*(){}[]=<>/,.'
             let symbols_length = symbols.length;
-            RandomVar = symbols[RandomVar_core(0,symbols_length-1)];
+            RandomVar = symbols[RandomVar_core(0, symbols_length - 1)];
             break;
     }
     return RandomVar;
@@ -87,10 +88,11 @@ function getRandomVar(){
 
 /* Layer 3 */
 var passwordstore;
-function getpassword(){
+
+function getpassword() {
     password_length = document.getElementById("passl").value;
 
-    if(password_length>=8){    
+    if (password_length >= 8) {
         //Create passwordarray[password_length] with all element is =1
         let passwordarray = Array(password_length).fill(1);
         //charge the passwordarray[password_length] by RandomVar
@@ -100,23 +102,19 @@ function getpassword(){
         //make passwordarray one element call password
         let password = passwordarray.join("");
         //print password in the console for test
-        console.log("your password is: "+password);
-        
-        password_display_flag=1;
-        return password; 
+        console.log("your password is: " + password);
 
-    }
-    else if(password_length==""){
+        password_display_flag = 1;
+        return password;
+
+    } else if (password_length == "") {
         $("p").empty();
         $("p").text("You should put a length!");
-        }
-    else{
+    } else {
         $("p").empty();
         $("p").text("The length of the password should greater or equal 8");
         //alert("The length of a password should greater or equal 8");
-        console.log("The length of a password should greater or equal 8"); 
-    }  
+        console.log("The length of a password should greater or equal 8");
+    }
 
 }
-
-
