@@ -115,7 +115,10 @@
 
           <b>Moskotcho Password Generator</b></h4>
 
-        <h5 id="your_new_password_text" style="font-weight:bold">Your new password</h5>
+        <h5 id="your_new_password_text" style="font-weight:bold">
+          Your new password 
+          <span class="mdl-badge" id="password_number_session_badge" data-badge="password_number_session" title="The number of password generated in this session">
+          </span></h5>
         </b>
         <p class="devfast-large devfast-center" style="color: #B71C1C;max-width: 100%;" id="password_display">
           <mark>Put the length and click the blue button to get your first password!</mark>
@@ -131,9 +134,11 @@
           </div>
         </form>
 
+        <h6>You want more customize your password? <b onclick="alert('Wait the next update :D')" style="cursor:pointer;">clike here</b></h6>
+
         <button id="password_generate_button"
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          style="border-radius:13px;background-color: blue">
+          style="border-radius:13px;background-color: blue" >
           Generate Password
         </button>
         <h6>Your password auto copy to clipboard after generated</h6>

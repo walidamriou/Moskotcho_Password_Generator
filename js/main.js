@@ -45,6 +45,9 @@ function RandomVar_core(min, max) {
 /* copyToClipboard function*/
 var password_display_flag = 0;
 
+/*The number of passwords in the session */
+var password_number_session=0;
+
 function copyToClipboard(element) {
     var $temp = $("<input>");
     $("body").append($temp);
@@ -103,6 +106,10 @@ function getpassword() {
         let password = passwordarray.join("");
         //print password in the console for test
         console.log("your password is: " + password);
+        password_number_session+=1;
+        console.log("password_number_session: ",password_number_session);
+        alerticon = document.getElementById('password_number_session_badge');
+        alerticon.setAttribute('data-badge', password_number_session);
 
         password_display_flag = 1;
         return password;
