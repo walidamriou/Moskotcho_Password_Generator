@@ -14,7 +14,7 @@ function readJsonFile(file, callback) {
 readJsonFile("https://walidamriou.github.io/data.json", function(text){
     var data = JSON.parse(text);
     console.log(data);
-    //alert(data[0].data);
-    var elem = document.getElementById("datadisplay");
-    elem.innerHTML = data.data['id']; //we want to read: "id": "123664" 
+    console.log(data[0].data);
+    //var elem = document.getElementById("datadisplay");
+    //elem.innerHTML = data.data['id']; //we want to read: "id": "123664" 
 });
