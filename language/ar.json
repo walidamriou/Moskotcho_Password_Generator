@@ -12,7 +12,6 @@
     "version":"the Pre-alpha version",
     "Developer_info":"Developed by: Walid Amriou",
     "put_a_length":"You should put a length!",
-    "put_correct_length":"The length of the password should greater or equal 8",
-    "":""
+    "put_correct_length":"The length of the password should greater or equal 8"
 
 }
