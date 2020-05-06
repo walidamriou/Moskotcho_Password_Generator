@@ -1,20 +1,30 @@
+var English = "https://moskotchopg.walidamriou.com/language/en.json";
+var Arabic = "https://moskotchopg.walidamriou.com/language/ar.json";
 
-function readJsonFile(file, callback) {
+var request_data;
+
+function readJsonFile(file) {
+  return new Promise(function (resolve, reject) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
     rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
+    rawFile.onreadystatechange = function () {
+      if (rawFile.readyState === 4 && rawFile.status == "200") {
+        var data = JSON.parse(rawFile.responseText);
+        resolve(data);
+      }
+    };
     rawFile.send(null);
+  });
 }
 
-readJsonFile("https://walidamriou.github.io/data.json", function(text){
-    var data = JSON.parse(text);
+function readAndAppend(language) {
+  readJsonFile(language).then(function (data) {
     console.log(data);
-    console.log(data.data1['id']);
-    //var elem = document.getElementById("datadisplay");
-    //elem.innerHTML = data.data['id']; //we want to read: "id": "123664" 
-});
+    request_data = data;
+  });
+}
+
+readAndAppend(English);
+readAndAppend(Arabic);
+
