@@ -17,8 +17,8 @@
   <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
 
   <script src="material_design/material.min.js"></script>
-  <script src="js/main.js"></script>
   <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/language.js" ></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -69,6 +69,10 @@
     });
   </script>
 
+
+
+
+
   <style>
     body,h1,h2,h3,h4,h5,h6,p,a {
       font-family: monospace, sans-serif
@@ -95,6 +99,9 @@
 
     #your_new_password_text {
       color: red;
+    }
+    .mdl-ceckbox{
+      width: 10%;
     }
   </style>
 </head>
@@ -139,6 +146,55 @@
 <!-- 
         <h6>You want more customize your password? <b onclick="alert('Wait the next update :D')" style="cursor:pointer;">clike here</b></h6>
 -->
+
+        <ul class="mdl-list" style="padding-left: 30%;">
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                        
+
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1" style="width: 10%;">
+                <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
+                <span class="mdl-checkbox__label"><b>Lowercase</b> (abcdefghijklmnopqrstuvwxyz)</span>
+              </label>     
+
+            </span>
+          </li>
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2" style="width: 10%;">
+                <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" checked>
+                <span class="mdl-checkbox__label"><b>Uppercase</b> ((ABCDEFGHIJKLMNOPQRSTUVWXYZ))</span>
+              </label>          
+            
+            </span>
+          </li>
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+
+
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3" id="checkbox-1-1" style="width: 10%;">
+                <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" checked>
+                <span class="mdl-checkbox__label"><b>Numbers</b> (0123456789)</span>
+              </label>     
+            
+            </span>
+          </li>
+
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+
+
+              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4" style="width: 10%;">
+                <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" checked>
+                <span class="mdl-checkbox__label"><b>Symboles</b> (!@#$%^&*(){}[]=<>/,.)</span>
+              </label>     
+            
+            </span>
+          </li>
+
+        </ul>
+
         <button id="password_generate_button"
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
           style="border-radius:13px;background-color: blue" >

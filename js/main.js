@@ -51,11 +51,54 @@ var password_display_flag = 0;
 var password_number_session=0;
 
 /* values for customization the password */
+
 iclude_lower_case = 1;
 iclude_Upper_case = 1;
 iclude_number = 1;
 iclude_symbols = 1;
 
+$(document).ready(function(){
+    $('input[id="checkbox-1"]').click(function(){
+        if($(this).prop("checked") == true){
+            iclude_lower_case = 1;
+            console.log("Checkbox is checked 1.");
+        }
+        else if($(this).prop("checked") == false){
+            iclude_lower_case = 0;
+            console.log("Checkbox is unchecked 1.");
+        }
+    });
+    $('input[id="checkbox-2"]').click(function(){
+        if($(this).prop("checked") == true){
+            iclude_Upper_case = 1;
+            console.log("Checkbox is checked 2.");
+        }
+        else if($(this).prop("checked") == false){
+            iclude_Upper_case = 0;
+            console.log("Checkbox is unchecked 2.");
+        }
+    });
+    $('input[id="checkbox-3"]').click(function(){
+        if($(this).prop("checked") == true){
+            iclude_number = 1;
+            console.log("Checkbox is checked 3.");
+        }
+        else if($(this).prop("checked") == false){
+            iclude_number = 0;
+            console.log("Checkbox is unchecked 3.");
+        }
+    });
+    $('input[id="checkbox-4"]').click(function(){
+        if($(this).prop("checked") == true){
+            iclude_symbols = 1;
+            console.log("Checkbox is checked 4.");
+        }
+        else if($(this).prop("checked") == false){
+            iclude_symbols = 0;
+            console.log("Checkbox is unchecked 4.");
+        }
+    });
+});
 
 /* copy to clipboard function */
 function copyToClipboard(element) {
@@ -142,6 +185,7 @@ function getpassword() {
         alerticon = document.getElementById('password_number_session_badge');
         alerticon.setAttribute('data-badge', password_number_session);
 
+        
         password_display_flag = 1;
         return password;
 
