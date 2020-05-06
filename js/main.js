@@ -15,6 +15,8 @@ Last update: May 2020
 
 */
 
+console.log("Pre-alpha version 0.1 of Moskotcho Password Generator");
+
 // Generate a random integer n with equal chance in  min <= n < max.
 function RandomVar_core(min, max) {
     let range = max - min;
@@ -42,12 +44,20 @@ function RandomVar_core(min, max) {
     }
 }
 
-/* copyToClipboard function*/
+/* password display flag*/
 var password_display_flag = 0;
 
 /*The number of passwords in the session */
 var password_number_session=0;
 
+/* values for customization the password */
+iclude_lower_case = 1;
+iclude_Upper_case = 1;
+iclude_number = 1;
+iclude_symbols = 1;
+
+
+/* copy to clipboard function */
 function copyToClipboard(element) {
     var $temp = $("<input>");
     $("body").append($temp);
@@ -58,7 +68,28 @@ function copyToClipboard(element) {
 
 /* Layer 1 */
 function getRandomType() {
-    return (Math.floor(Math.random() * 4));
+    let type_number = '1234';
+
+    let type_number_choose=type_number;
+
+    if(iclude_lower_case == 0){
+        type_number_choose = type_number_choose.replace('1', ''); 
+    }
+    if(iclude_Upper_case == 0){
+        type_number_choose = type_number_choose.replace('2', ''); 
+    }
+    if(iclude_number == 0){
+        type_number_choose = type_number_choose.replace('3', ''); 
+    }
+    if(iclude_symbols == 0){
+        type_number_choose = type_number_choose.replace('4', ''); 
+    }
+
+    let type_number_length = type_number_choose.length;
+    console.log('Random type_number_length:',type_number_length);
+    let Randomtype = type_number_choose[RandomVar_core(0, type_number_length)];
+    console.log('Random type:',Randomtype);
+    return Randomtype;
 }
 
 /* Layer 2*/
@@ -67,22 +98,22 @@ function getRandomVar() {
     let RandomVar;
     switch (getRandomType()) {
         //Lower
-        case 0:
+        case '1':
             RandomVar = String.fromCharCode(RandomVar_core(97, 122));
             break;
-            //Upper
-        case 1:
+         //Upper
+        case '2':
             RandomVar = String.fromCharCode(RandomVar_core(65, 90));
             break;
-            //Number
-        case 2:
+       //Number
+        case '3':
             RandomVar = String.fromCharCode(RandomVar_core(48, 57));
             break;
-            //symbols
-        case 3:
-            let symbols = '!@#$%^&*(){}[]=<>/,.'
+        //symbols
+        case '4':
+            let symbols = '!@#$%^&*(){}[]=<>/,.';
             let symbols_length = symbols.length;
-            RandomVar = symbols[RandomVar_core(0, symbols_length - 1)];
+            RandomVar = symbols[RandomVar_core(0, symbols_length)];
             break;
     }
     return RandomVar;
