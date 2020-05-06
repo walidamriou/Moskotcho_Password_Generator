@@ -1,3 +1,5 @@
+
+/*
 var English = "https://moskotchopg.walidamriou.com/language/en.json";
 var Arabic = "https://moskotchopg.walidamriou.com/language/ar.json";
 
@@ -27,3 +29,4 @@ function readAndAppend(language) {
 
 readAndAppend(English);
 readAndAppend(Arabic);
+*/
