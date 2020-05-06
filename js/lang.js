@@ -27,4 +27,3 @@ function readAndAppend(language) {
 
 readAndAppend(English);
 readAndAppend(Arabic);
-
