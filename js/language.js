@@ -1,3 +1,4 @@
+/*
 var English = "https://moskotchopg.walidamriou.com/language/en.json";
 var Arabic = "https://moskotchopg.walidamriou.com/language/ar.json";
 
@@ -18,12 +19,24 @@ function readJsonFile(file) {
   });
 }
 
-function readAndAppend(language) {
+function ReadLanguage(language) {
   readJsonFile(language).then(function (data) {
     console.log(data);
     request_data = data;
+    document.getElementById("test").innerHTML = request_data.English['Help_text'];
+
   });
 }
 
-readAndAppend(English);
-readAndAppend(Arabic);
+var default_language = ReadLanguage(English);
+//ReadLanguage(Arabic['Help_text']);
+//console.log(request_data['Help_text']);
+function BodyTextstructure(){
+  //change by id
+  //default_language
+  document.getElementById("your_new_password_text").innerHTML = default_language;
+
+
+}
+
+*/

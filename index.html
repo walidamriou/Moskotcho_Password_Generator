@@ -19,7 +19,7 @@
   <script src="material_design/material.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/jquery.min.js"></script>
-  <script src="js/lang.js" ></script>
+  <script src="js/language.js" ></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43599500-3"></script>
@@ -121,6 +121,7 @@
           Your new password 
           <span class="mdl-badge" id="password_number_session_badge" data-badge="password_number_session" title="The number of password generated in this session">
           </span></h5>
+
         </b>
         <p class="devfast-large devfast-center" style="color: #B71C1C;max-width: 100%;" id="password_display">
           <mark>Put the length and click the blue button to get your first password!</mark>
@@ -135,16 +136,15 @@
             <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
         </form>
-
+<!-- 
         <h6>You want more customize your password? <b onclick="alert('Wait the next update :D')" style="cursor:pointer;">clike here</b></h6>
-
+-->
         <button id="password_generate_button"
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
           style="border-radius:13px;background-color: blue" >
           Generate Password
         </button>
         <h6>Your password auto copy to clipboard after generated</h6>
-        <h6><mark>the Pre-alpha version </mark></h6>
 
         <h6 class="devfast-large devfast-center"><b>Developed by: Walid Amriou</b></h6>
 
@@ -181,6 +181,15 @@
         </ul>
       </div>
 
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">Version</h1>
+          <mark>Pre-alpha version 0.1 </mark>
+          <br>
+          <b>In the next version:</b> <br>
+          Customize your password<br>
+          Choose Language (English or Arabic)
+      </div>
 
       <div class="mdl-mega-footer__drop-down-section">
         <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
