@@ -57,45 +57,51 @@ iclude_Upper_case = 1;
 iclude_number = 1;
 iclude_symbols = 1;
 
+console.log("Iclude_lower_case = ",iclude_lower_case);
+console.log("Iclude_Upper_case = ",iclude_Upper_case);
+console.log("Iclude_number = ",iclude_number);
+console.log("Iclude_symbols = ",iclude_symbols);
+
+
 $(document).ready(function(){
     $('input[id="checkbox-1"]').click(function(){
         if($(this).prop("checked") == true){
             iclude_lower_case = 1;
-            console.log("Checkbox is checked 1.");
+            console.log("Checkbox is checked 1. and iclude_lower_case = ",iclude_lower_case);
         }
         else if($(this).prop("checked") == false){
             iclude_lower_case = 0;
-            console.log("Checkbox is unchecked 1.");
+            console.log("Checkbox is unchecked 1. and iclude_lower_case = ",iclude_lower_case);
         }
     });
     $('input[id="checkbox-2"]').click(function(){
         if($(this).prop("checked") == true){
             iclude_Upper_case = 1;
-            console.log("Checkbox is checked 2.");
+            console.log("Checkbox is checked 2. and iclude_Upper_case = ",iclude_Upper_case);
         }
         else if($(this).prop("checked") == false){
             iclude_Upper_case = 0;
-            console.log("Checkbox is unchecked 2.");
+            console.log("Checkbox is unchecked 2. and iclude_Upper_case = ",iclude_Upper_case);
         }
     });
     $('input[id="checkbox-3"]').click(function(){
         if($(this).prop("checked") == true){
             iclude_number = 1;
-            console.log("Checkbox is checked 3.");
+            console.log("Checkbox is checked 3. and iclude_number = ",iclude_number);
         }
         else if($(this).prop("checked") == false){
             iclude_number = 0;
-            console.log("Checkbox is unchecked 3.");
+            console.log("Checkbox is unchecked 3. and iclude_number = ",iclude_number);
         }
     });
     $('input[id="checkbox-4"]').click(function(){
         if($(this).prop("checked") == true){
             iclude_symbols = 1;
-            console.log("Checkbox is checked 4.");
+            console.log("Checkbox is checked 4. and iclude_symbols = ",iclude_symbols);
         }
         else if($(this).prop("checked") == false){
             iclude_symbols = 0;
-            console.log("Checkbox is unchecked 4.");
+            console.log("Checkbox is unchecked 4. and iclude_symbols = ",iclude_symbols);
         }
     });
 });
@@ -158,6 +164,7 @@ function getRandomVar() {
             let symbols_length = symbols.length;
             RandomVar = symbols[RandomVar_core(0, symbols_length)];
             break;
+
     }
     return RandomVar;
 
@@ -167,6 +174,12 @@ function getRandomVar() {
 var passwordstore;
 
 function getpassword() {
+    if ((iclude_lower_case === 0) && (iclude_Upper_case === 0 ) && (iclude_number === 0 ) && (iclude_symbols === 0)) {
+        console.log("You should choose at least one type of characters!");
+        $("p").empty();
+        $("p").text("You should choose at least one type of characters!");
+    }
+    else {
     password_length = document.getElementById("passl").value;
 
     if (password_length >= 8) {
@@ -178,6 +191,7 @@ function getpassword() {
         }
         //make passwordarray one element call password
         let password = passwordarray.join("");
+        
         //print password in the console for test
         console.log("your password is: " + password);
         password_number_session+=1;
@@ -198,5 +212,6 @@ function getpassword() {
         //alert("The length of a password should greater or equal 8");
         console.log("The length of a password should greater or equal 8");
     }
+}
 
 }
