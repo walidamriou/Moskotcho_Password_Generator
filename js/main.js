@@ -170,10 +170,25 @@ function getRandomVar() {
 
 }
 
+/* Add custom symbols */
+function setcustom(custom,password){
+    if(custom!=''){
+        console.log('set custom password with',custom,'to',password);
+        for (let index = 0; index < custom.length; index++) {
+            let position = RandomVar_core(0, password.length);
+            password[RandomVar_core(0, password.length)]=custom[index];
+            //password[0]='*';
+        }
+        password = password.join("");
+    }
+    return password;
+}
+
 /* Layer 3 */
 var passwordstore;
 
 function getpassword() {
+
     if ((iclude_lower_case === 0) && (iclude_Upper_case === 0 ) && (iclude_number === 0 ) && (iclude_symbols === 0)) {
         console.log("You should choose at least one type of characters!");
         $("p").empty();
@@ -191,7 +206,14 @@ function getpassword() {
         }
         //make passwordarray one element call password
         let password = passwordarray.join("");
-        
+        console.log("password before custom: ",password);
+
+        var custom = document.getElementById("input_symbols").value;
+        console.log("Symbols_input: ",custom);
+
+        password = setcustom(custom,passwordarray);
+        console.log("password after custom: ",password);
+
         //print password in the console for test
         console.log("your password is: " + password);
         password_number_session+=1;
