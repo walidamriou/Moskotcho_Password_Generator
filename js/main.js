@@ -177,7 +177,6 @@ function setcustom(custom,password){
         for (let index = 0; index < custom.length; index++) {
             let position = RandomVar_core(0, password.length);
             password[RandomVar_core(0, password.length)]=custom[index];
-            //password[0]='*';
         }
         password = password.join("");
     }
