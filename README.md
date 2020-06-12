@@ -4,6 +4,9 @@ Password generator service to generate random &amp; secure passwords
 ### Website of the project:  
 https://moskotchopg.walidamriou.com/
 
+### Desktop app 
+https://github.com/walidamriou/Moskotcho_Password_Generator_Desktop  
+
 <p align="center">
   <img width="50%" height="50%" src="https://github.com/walidamriou/Moskotcho_Password_Generator_Desktop/blob/master/img/anim.png">
 </p>
