@@ -1,1 +1,206 @@
-<iframe src="https://snapcraft.io/moskotcho-password-generator/embedded?button=black&channels=true&summary=true&screenshot=true" frameborder="0" width="100%" height="610px" style="border: 1px solid #CCC; border-radius: 2px;"></iframe>
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <title>Moskotcho Password Generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Lokum GoLang is Website to learn Go by example programs">
+  <meta name="author" content="WalidAmriou">
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_buttons.css">
+  <link rel="icon" href="img/Logo.jpg" type="image/png" sizes="16x16">
+  <link rel="stylesheet" href="material_design/material.min.css">
+  
+  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+  <script src="material_design/material.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/language.js" ></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43599500-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-43599500-3');
+</script>
+
+
+  <style>
+    body,h1,h2,h3,h4,h5,h6,p,a {
+      font-family: monospace, sans-serif
+    }
+
+    body,
+    html {
+      color: #212121;
+      background-color: #FAFAFA
+    }
+    @media (min-width:600px){
+      .mdl-list {
+        padding-left: 30%;
+      }
+    }
+
+    @media (max-width:700px){
+      .mdl-list {
+        padding-left: 10%;
+      }
+    }
+
+    .bgimg {
+      background-image: url('img/matrix.svg');
+      min-height: 100%;
+      background-repeat: repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    mark {
+      background-color: #94ebee;
+      color: black;
+    }
+
+    #your_new_password_text {
+      color: red;
+    }
+    .mdl-ceckbox{
+      width: 10%;
+    }
+    .mdl-list__item{
+      min-height:65px;
+    }
+  </style>
+</head>
+
+<body style="color: #212121;">
+  
+  <div class="devfast-display-container devfast-animate-opacity devfast-text-white">
+    <div class="devfast-display-topleft devfast-padding-large devfast-xlarge" style="margin: 10px">
+    </div>
+
+    <div class="devfast-display-topright devfast-padding-large devfast-xlarge" style="margin: 10px">
+    </div>
+
+    <br>
+    <center>
+      <div class="devfast-display-middle">
+        <h5 class="devfast-jumbo devfast-animate-top"></h5>
+        <h4 stylecolor="#212121">
+          <b>Moskotcho Password Generator Desktop app</b></h4>
+
+        <h5>
+          open source app to generate random & secure passwords<br>
+        </h5>
+        </b>
+
+        <h5 style="color: #B00020;background-color: #E0E0E0;">For <b>Linux</b> Users</h5>
+        <br><br>
+          <b>Install it from snapcraft</b> <br><br>
+            <a href="https://snapcraft.io/moskotcho-password-generator">
+              <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-white.svg" />
+              </a>
+              <br><br>
+          <b>or Install using the command line</b> <br><br>
+          sudo snap install moskotcho-password-generator 
+          
+          <br><br>
+
+
+
+          <h5 style="color: #B00020;background-color: #E0E0E0;">For <b>Windows</b> Users</h5>
+          <br><br>
+            <b>Download Setup file</b> <br><br>
+
+        <button id="password_generate_button"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          style="border-radius:13px;background-color:#00758D"
+          onclick=" window.open('./app.html','_blank')"
+          >
+          Windows 32 bit
+        </button>
+
+        <button id="password_generate_button"
+        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        style="border-radius:13px;background-color: #555759"
+        onclick=" window.open('./desktop.html','_blank')"
+        >
+        Windows 64 bit
+      </button>
+
+
+        <br>
+        <br>
+
+
+
+        <h5 style="color: #B00020;background-color: #E0E0E0;">For <b>MacOS</b> Users</h5>
+        <br><br>
+          <b>Coming soon</b> <br><br>
+
+          <br>
+          <br>
+          <br>
+          <br>
+        <img src="img/anim.png" alt="GDG" style="max-width: 50%;"">
+      </div>
+    </center>
+    <div class=" devfast-display-bottomleft devfast-padding-large">
+      </div>
+  </div>
+
+  <footer class="mdl-mega-footer">
+    <div class="mdl-mega-footer__middle-section">
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">About Project</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="/">About</a></li>
+          <li><a href="/" target="_blank">Source code</a>
+          </li>
+          <li><a href="/"target="_blank">License</a></li>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading">About developer</h1>
+        <ul class="mdl-mega-footer__link-list">
+          <li><a href="https://www.linkedin.com/in/walidamriou/" target="_blank">linkedin @walidamriou</a></li>
+          <li><a href="https://github.com/walidamriou" target="_blank">GitHub @walidamriou</a></li>
+          <li><a href="https://twitter.com/walidamriou" target="_blank">Twitter @walidamriou</a></li>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <h1 class="mdl-mega-footer__heading"></h1>
+        <ul class="mdl-mega-footer__link-list">
+          <a href="https://snapcraft.io/moskotcho-password-generator">
+            <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-white.svg" />
+            </a>
+        </ul>
+      </div>
+
+      <div class="mdl-mega-footer__drop-down-section">
+        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+        <h1 class="mdl-mega-footer__heading"> Moskotcho Password Generator</h1>
+        open source Password generator service to generate random & secure passwords
+      </div>
+    </div>
+
+
+    <div class="mdl-mega-footer__bottom-section">
+      <div class="mdl-logo">Moskotcho Password Generator</div>
+      Walid Amriou 2020
+    </div>
+
+  </footer>
+</body>
