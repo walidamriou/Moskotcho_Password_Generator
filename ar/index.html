@@ -5,7 +5,8 @@
   <title>موسكوتشو مولد كلمات السر</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Moskotcho Password Generator is open source Password generator service to generate random & secure passwords">
+  <meta name="description"
+    content="Moskotcho Password Generator is open source Password generator service to generate random & secure passwords">
   <meta name="author" content="WalidAmriou">
 
 
@@ -14,60 +15,71 @@
   <link rel="stylesheet" href="../css/style_buttons.css">
   <link rel="icon" href="../img/logo.png" type="image/png" sizes="16x16">
   <link rel="stylesheet" href="../material_design/material.min.css">
-  
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="../material_design/material.min.js"></script>
   <script src="../js/jquery.min.js"></script>
   <script src="../js/main.js"></script>
-  <script src="../js/language.js" ></script>
+  <script src="../js/language.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43599500-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43599500-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-43599500-3');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-<script>
-  $(document).ready(function () {
-    //hidden your new password text in the first load
-    document.getElementById("your_new_password_text").style.visibility = "hidden";
+    gtag('config', 'UA-43599500-3');
+  </script>
 
-    $("#password_generate_button").click(function () {
-      //password text 
-      // 1- empty the text
-      $("p").empty();
-      // 2- generate and put the new password to the text 
-      $("p").text(getpassword());
+  <script>
+    $(document).ready(function () {
+      //hidden your new password text in the first load
+      document.getElementById("your_new_password_text").style.visibility = "hidden";
 
-      // we use a flag call "password_display_flag" to know if there is a new password
-      if (password_display_flag == 1) {
-        //change  "your new password" text color by random 
-        // to help the user see the change 
-        let color_var = '#' + Math.floor(Math.random() * 16777215).toString(16);
-        console.log(color_var);
-        $("#your_new_password_text").css("color", color_var);
-        document.getElementById("your_new_password_text").style.visibility = "visible";
+      $("#password_generate_button").click(function () {
+        //password text 
+        // 1- empty the text
+        $("p").empty();
+        // 2- generate and put the new password to the text 
+        $("p").text(getpassword());
 
-        //opy password to clipboard 
-        copyToClipboard('#password_display');
-      } else {
-        document.getElementById("your_new_password_text").style.visibility = "hidden";
-      }
+        // we use a flag call "password_display_flag" to know if there is a new password
+        if (password_display_flag == 1) {
+          //change  "your new password" text color by random 
+          // to help the user see the change 
+          let color_var = '#' + Math.floor(Math.random() * 16777215).toString(16);
+          console.log(color_var);
+          $("#your_new_password_text").css("color", color_var);
+          document.getElementById("your_new_password_text").style.visibility = "visible";
 
-      //we change the status of password display flag to the 0 or Initial valure
-      password_display_flag = 0;
+          //opy password to clipboard 
+          copyToClipboard('#password_display');
+        } else {
+          document.getElementById("your_new_password_text").style.visibility = "hidden";
+        }
 
+        //we change the status of password display flag to the 0 or Initial valure
+        password_display_flag = 0;
+
+      });
     });
-  });
-</script>
+  </script>
 
   <style>
-    body,h1,h2,h3,h4,h5,h6,p,a {
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
       font-family: 'Noto Sans Arabic', sans-serif
     }
 
@@ -76,13 +88,14 @@
       color: #212121;
       background-color: #FAFAFA
     }
-    @media (min-width:600px){
+
+    @media (min-width:600px) {
       .mdl-list {
         padding-left: 30%;
       }
     }
 
-    @media (max-width:700px){
+    @media (max-width:700px) {
       .mdl-list {
         padding-left: 10%;
       }
@@ -97,12 +110,15 @@
     #your_new_password_text {
       color: red;
     }
-    .mdl-ceckbox{
+
+    .mdl-ceckbox {
       width: 10%;
     }
-    .mdl-list__item{
-      min-height:65px;
+
+    .mdl-list__item {
+      min-height: 65px;
     }
+
     .wrapper {
       display: grid;
       grid-template-columns: 50% 50%;
@@ -112,56 +128,56 @@
 
 <body style="color: #212121;">
   <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header" style="background: rgb(0,153,102);
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header" style="background: rgb(0,153,102);
   background: linear-gradient(90deg, rgba(0,153,102,1) 0%, rgba(56,56,56,1) 35%);">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title"></span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href=""><b>الرئيسية</b></a>
+          <a class="mdl-navigation__link" href="../desktop.html">تطبيق الكمبيوتر</a>
+          <a class="mdl-navigation__link" href="">تطبيق الموبيل</a>
+          <a class="mdl-navigation__link" href="">عن المشروع</a>
+          <a class="mdl-navigation__link" href="">عن المطور</a>
+          <a class="mdl-navigation__link" href="">التواصل</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
       <span class="mdl-layout-title"></span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href=""><b>الرئيسية</b></a>
-        <a class="mdl-navigation__link" href="../desktop.html">تطبيق الكمبيوتر</a>
-        <a class="mdl-navigation__link" href="">تطبيق الموبيل</a>
-        <a class="mdl-navigation__link" href="">عن المشروع</a>
-        <a class="mdl-navigation__link" href="">عن المطور</a>
-        <a class="mdl-navigation__link" href="">التواصل</a>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href=""><b>Home</b></a>
+        <a class="mdl-navigation__link" href="./desktop.html">Desktop app</a>
+        <a class="mdl-navigation__link" href="">Mobile app</a>
+        <a class="mdl-navigation__link" href="">about project</a>
+        <a class="mdl-navigation__link" href="">About Developer</a>
+        <a class="mdl-navigation__link" href="">Contact</a>
       </nav>
     </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title"></span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href=""><b>Home</b></a>
-      <a class="mdl-navigation__link" href="./desktop.html">Desktop app</a>
-      <a class="mdl-navigation__link" href="">Mobile app</a>
-      <a class="mdl-navigation__link" href="">about project</a>
-      <a class="mdl-navigation__link" href="">About Developer</a>
-      <a class="mdl-navigation__link" href="">Contact</a>
-    </nav>
   </div>
-</div>
-  
-<br>
-<br>
 
-    <br>
-    <center>
-      <div class="devfast-display-middle">
-        <h5 class="devfast-jumbo devfast-animate-top"></h5>
-        <h4 stylecolor="#212121">
-          <img src="../img/logo.png" alt="GDG" style="width: 80px;height: 80px;">
-          <b>موسكوتشو مولد كلمات السر</b></h4>
+  <br>
+  <br>
 
-        <h5>
-          خدمة وتطبيق مفتوح المصدر لتوليد كلمات سر عشوائية وآمنة<br>
-          </span></h5>
+  <br>
+  <center>
+    <div class="devfast-display-middle">
+      <h5 class="devfast-jumbo devfast-animate-top"></h5>
+      <h4 stylecolor="#212121">
+        <img src="../img/logo.png" alt="GDG" style="width: 80px;height: 80px;">
+        <b>موسكوتشو مولد كلمات السر</b></h4>
 
-        <br>
+      <h5>
+        خدمة وتطبيق مفتوح المصدر لتوليد كلمات سر عشوائية وآمنة<br>
+        </span></h5>
 
-        <center>
+      <br>
+
+      <center>
         <div class="wrapper">
           <!-- Input  -->
           <div class="mdl-shadow--3dp" style="margin: 20px;padding: 20px;">
@@ -171,95 +187,101 @@
               <form action="#">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="passl"
-                    autocomplete="off" onkeypress="myFunction(event)" style="text-align: center;background-color:#dddddd;">
+                    autocomplete="off" onkeypress="myFunction(event)"
+                    style="text-align: center;background-color:#dddddd;">
                   <label class="mdl-textfield__label" for="sample4" style="text-align: center;">طول كلمة السر</label>
                   <span class="mdl-textfield__error" style="text-align: center;">ما أدخلته ليس رقم</span>
                 </div>
               </form>
             </center>
-      
+
             <!-- 
         <h6>You want more customize your password? <b onclick="alert('Wait the next update :D')" style="cursor:pointer;">clike here</b></h6>
       -->
-      
+
             <ul class="mdl-list">
               <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-      
-      
+
+
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1" id="checkbox56">
-                    <span class="mdl-checkbox__label" style="font-family: 'Noto Sans Arabic', sans-serif"><b>حروف لاتينية صغيرة</b> abcdefghijklmnopqrstuvwxyz</span>
+                    <span class="mdl-checkbox__label" style="font-family: 'Noto Sans Arabic', sans-serif"><b>حروف
+                        لاتينية صغيرة</b> abcdefghijklmnopqrstuvwxyz</span>
                     <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked autocomplete="off">
 
                   </label>
-      
+
                 </span>
               </li>
               <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-      
+
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
                     <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" checked autocomplete="off">
-                    <span class="mdl-checkbox__label" style="font-family: 'Noto Sans Arabic', sans-serif"><b>حروف لاتينية كبيرة</b> ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+                    <span class="mdl-checkbox__label" style="font-family: 'Noto Sans Arabic', sans-serif"><b>حروف
+                        لاتينية كبيرة</b> ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
                   </label>
-      
+
                 </span>
               </li>
               <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-      
-      
+
+
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3" id="checkbox-1-1">
                     <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" checked autocomplete="off">
-                    <span class="mdl-checkbox__label" style="font-family: 'Noto Sans Arabic', sans-serif"><b>أرقام</b> 0123456789</span>
+                    <span class="mdl-checkbox__label" style="font-family: 'Noto Sans Arabic', sans-serif"><b>أرقام</b>
+                      0123456789</span>
                   </label>
-      
+
                 </span>
               </li>
-      
+
               <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content">
-      
-      
+
+
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4">
                     <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" checked autocomplete="off">
-                    <span class="mdl-checkbox__label" xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Noto Sans Arabic', sans-serif"><b>رموز</b>
+                    <span class="mdl-checkbox__label" xmlns="http://www.w3.org/1999/xhtml"
+                      style="font-family: 'Noto Sans Arabic', sans-serif"><b>رموز</b>
                       !"#$%&amp;'().etc</span>
                   </label>
-      
+
                 </span>
               </li>
-      
-      
+
+
               <li class="mdl-list__item">
                 <span class="mdl-list__item-primary-content" style="font-family: 'Noto Sans Arabic', sans-serif">
                   إضافة أشياء مخصصة: &nbsp;
-                  <input class="mdl-textfield__input" type="text" id="input_symbols" autocomplete="off" value="" style="background-color: #dddddd;">
+                  <input class="mdl-textfield__input" type="text" id="input_symbols" autocomplete="off" value=""
+                    style="background-color: #dddddd;">
                   <label class="mdl-textfield__label" for="sample1">
                     <!--Logo left--></label>
                 </span>
               </li>
-      
-      
+
+
             </ul>
-      
+
             <center>
               <button id="password_generate_button"
                 class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                 style="border-radius:13px;background-color: blue;font-family: 'Noto Sans Arabic', sans-serif">
                 <b>
-                                  توليد كلمة السر
+                  توليد كلمة السر
                 </b>
               </button>
               <br>
               <br>
               كلمة السر ستحفظ تلقائيا في الحافظة
             </center>
-      
+
           </div>
-      
+
           <!-- end input-->
-      
+
           <!-- Output  -->
           <div>
             <center>
@@ -270,76 +292,76 @@
               <br>
               <br>
               <br>
-      
+
               <h5 id="your_new_password_text" style="font-weight:bold">كلمة سرك الجديدة
                 <span class="mdl-badge" id="password_number_session_badge" data-badge="password_number_session"
                   title="The number of password generated in this session">
                 </span>
               </h5>
-      
+
               </b>
-      
+
               <p class="devfast-large devfast-center" style="color: #B71C1C;max-width: 100%;" id="password_display">
-                ضع طول كلمة السر ومن ثم إضغط الزر الأزرق 
-                <br> 
+                ضع طول كلمة السر ومن ثم إضغط الزر الأزرق
+                <br>
                 لتحصل على أول كلمة سر هنا
-                
+
               </p>
-      
-      
+
+
             </center>
           </div>
-              <!-- end Output   -->
+          <!-- end Output   -->
         </div>
       </center>
 
-    
 
-        <br>
-        <img src="../img/anim.png" alt="GDG" style="max-width: 50%;"">
+
+      <br>
+      <img src="../img/anim.png" alt="GDG" style="max-width: 50%;"">
       </div>
     </center>
     <div class=" devfast-display-bottomleft devfast-padding-large">
-      </div>
-  </div>
+    </div>
+    </div>
 
-  <!-- price -->
-  <div style="background-color: #f2f2f2;">
+    <!-- price -->
+    <div style="background-color: #f2f2f2;">
 
-    <div class="mdl-grid">
-      <div class="mdl-cell mdl-cell--4-col">
-        <center>
-          <img src="../img/developer.jpg" style="max-width: 40%;">
-        </center>
-      </div>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col">
+          <center>
+            <img src="../img/developer.jpg" style="max-width: 40%;">
+          </center>
+        </div>
 
-      <div class="mdl-cell mdl-cell--8-col" style="color: #212121;">
-        <h5><b>تم تطوير هذا المشروع من قبل <b>عمريو وليد</b></h5>
-        <h6>
-          مهندس أنظمة مدمجة ومطور برمجيات
+        <div class="mdl-cell mdl-cell--8-col" style="color: #212121;">
+          <h5><b>تم تطوير هذا المشروع من قبل <b>عمريو وليد</b></h5>
+          <h6>
+            مهندس أنظمة مدمجة ومطور برمجيات
+            <br>
+            شهادة ماستر في الانظمة المدمجة وشهادة ليسونس في الإلكترونيات
+          </h6>
           <br>
-          شهادة ماستر في الانظمة المدمجة وشهادة ليسونس في الإلكترونيات
-        </h6>
+          <a href="https://www.walidamriou.com/" target="_blank">Website</a> <b>.</b>
+          <a href="https://www.linkedin.com/in/walidamriou/" target="_blank">Linkedin</a> <b>.</b>
+          <a href="https://github.com/walidamriou" target="_blank">GitHub</a> <b>.</b>
+          <a href="https://twitter.com/walidamriou" target="_blank">Twitter</a> <b>.</b>
+          <a href="https://facebook.com/walidamriou" target="_blank">Facebook</a>
+        </div>
         <br>
-        <a href="https://www.walidamriou.com/" target="_blank">Website</a> <b>.</b>
-        <a href="https://www.linkedin.com/in/walidamriou/" target="_blank">Linkedin</a> <b>.</b>
-        <a href="https://github.com/walidamriou" target="_blank">GitHub</a> <b>.</b>
-        <a href="https://twitter.com/walidamriou" target="_blank">Twitter</a> <b>.</b>
-        <a href="https://facebook.com/walidamriou" target="_blank">Facebook</a>
+
+
       </div>
-      <br>
-
 
     </div>
+    <!-- end price -->
 
-  </div>
-  <!-- end price -->
+    <footer class="mdl-mega-footer">
+      <div class="mdl-mega-footer__bottom-section">
+        <div class="mdl-logo">Moskotcho Password Generator</div>
+        صنع من قبل عمريو وليد | كل الحقوق محفوظة © 2020
+      </div>
 
-  <footer class="mdl-mega-footer">
-    <div class="mdl-mega-footer__bottom-section">
-      <div class="mdl-logo">Moskotcho Password Generator</div>
-      صنع من قبل عمريو وليد | كل الحقوق محفوظة © 2020
-    </div>
-
-  </footer>
+    </footer>
 </body>
