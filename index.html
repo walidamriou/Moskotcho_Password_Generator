@@ -77,8 +77,8 @@
     }
     @media (min-width:600px){
       .mdl-list {
-        padding-left: 30%;
-      }
+        padding-left: 5%;
+        padding-right: 5%;      }
     }
 
     @media (max-width:700px){
@@ -156,7 +156,6 @@
     <br>
     <center>
       <div class="devfast-display-middle">
-        <h5 class="devfast-jumbo devfast-animate-top"></h5>
         <h4 stylecolor="#212121">
           <img src="img/logo.png" alt="GDG" style="width: 80px;height: 80px;">
           <b>Moskotcho Password Generator</b></h4>
@@ -170,15 +169,14 @@
         <center>
         <div class="wrapper">
           <!-- Input  -->
-          <div class="mdl-shadow--3dp" style="margin: 20px;padding: 20px;">
+          <div class="mdl-shadow--3dp" style="margin: 20px;padding: 20px;margin-left: 50px;border-radius:20px">
             <br>
             <!--Numeric Textfield with Floating Label-->
             <center>
               <form action="#">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="passl"
-                    autocomplete="off" onkeypress="myFunction(event)">
-                  <label class="mdl-textfield__label" for="sample4">Password length ...</label>
+                  <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="passl" autocomplete="off" onkeypress="myFunction(event)" style="text-align: center;">
+                  <label class="mdl-textfield__label" for="sample4" style="text-align: center;">Password length ...</label>
                   <span class="mdl-textfield__error">Input is not a number!</span>
                 </div>
               </form>
@@ -195,8 +193,8 @@
       
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1" id="checkbox56"
                     style="width: 10%;">
-                    <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked autocomplete="off">
-                    <span class="mdl-checkbox__label"><b>Lowercase</b> abcdefghijklmnopqrstuvwxyz</span>
+                    <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked autocomplete="off" style="text-align: center;">
+                    <span class="mdl-checkbox__label" style="text-align: center;"><b>Lowercase</b><br> abcdefghijklmnopqrstuvwxyz</span>
                   </label>
       
                 </span>
@@ -205,8 +203,8 @@
                 <span class="mdl-list__item-primary-content">
       
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2" style="width: 10%;">
-                    <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" checked autocomplete="off">
-                    <span class="mdl-checkbox__label"><b>Uppercase</b> ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+                    <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" checked autocomplete="off" style="text-align: center;">
+                    <span class="mdl-checkbox__label" style="text-align: center;"><b>Uppercase</b><br> ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
                   </label>
       
                 </span>
@@ -217,8 +215,8 @@
       
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3" id="checkbox-1-1"
                     style="width: 10%;">
-                    <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" checked autocomplete="off">
-                    <span class="mdl-checkbox__label"><b>Numbers</b> 0123456789</span>
+                    <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" checked autocomplete="off" style="text-align: center;">
+                    <span class="mdl-checkbox__label" style="text-align: center;"><b>Numbers</b><br> 0123456789</span>
                   </label>
       
                 </span>
@@ -229,8 +227,8 @@
       
       
                   <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-4" style="width: 10%;">
-                    <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" checked autocomplete="off">
-                    <span class="mdl-checkbox__label" xmlns="http://www.w3.org/1999/xhtml"><b>Symboles</b>
+                    <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" checked autocomplete="off" style="text-align: center;">
+                    <span class="mdl-checkbox__label" xmlns="http://www.w3.org/1999/xhtml" style="text-align: center;"><b>Symboles</b><br>
                       !"#$%&amp;'().etc</span>
                   </label>
       
